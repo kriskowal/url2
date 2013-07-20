@@ -11,10 +11,10 @@
         "url": "git://github.com/kriskowal/url2.git"
     },
     "devDependencies": {
-        "jshint": ">=0.9.1",
-        "jasmine-node": "*",
-        "cover": "*",
-        "opener": "*"
+        "jshint": "~2.1",
+        "jasmine-node": "~1.2",
+        "cover": "~0.2.8",
+        "opener": "~1.3"
     },
     "scripts": {
         "test": "jasmine-node test",
