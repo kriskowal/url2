@@ -1,4 +1,3 @@
-
 var URL = require("url");
 
 // Node’s URL parse produces:
@@ -26,8 +25,8 @@ exports.resolve = URL.resolve;
 exports.resolveObject = URL.resolveObject;
 
 exports.parse = parse;
-function parse(url) {
-    var object = URL.parse(url);
+function parse() {
+    var object = URL.parse.apply(URL, arguments);
     object.pathname = object.pathname || "";
     object.root = !!object.pathname.length && object.pathname[0] === "/";
     if (object.root) {
