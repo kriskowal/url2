@@ -4,22 +4,29 @@ var URL = require("url");
 // http://user:password@foo.com:8080/path/to/foo/bar?a=10&c=20&d=30#hash
 // ^   ^^^^- auth ----^ ^-----^    |^- pathname----^^- search-----^^   ^
 // |   |||              hostname   |                 ^- query ----^|   |
-// proto||              |       ^--^^- path ----------------------^|   |
-// |    slashes         |       port                               hash^
-// |                    ^- host ---^                                   |
+// protocol             |       ^--^^- path ----------------------^|   |
+// |    ||              |       port                               hash^
+// |    slashes         ^- host ---^                                   |
 // ^- href ------------------------------------------------------------^
 
 // Node's URL format uses:
-//  protocol: gets a colon added if it doesn't have one yet
-//  slashes: used
-//  auth: used
-//  hostname: used if there's no host
-//  port: used if there's no host
-//  path: NOT USED AT ALL EVER
-//  pathname: used
-//  search: used
-//  query: used if object and no search
-//  hash: used
+//   protocol: gets a colon added if it doesn't have one yet
+//   slashes: used
+//   auth: used
+//     user: not used
+//     password: not used
+//   host:
+//     hostname: used if there's no host
+//     port: used if there's no host
+//   path: NOT USED AT ALL EVER
+//     pathname: used
+//       root: not used, not produced
+//       directory: not used, not produced
+//         directories: not used, not produced
+//       file: not used, not produced
+//     search: used
+//       query: used if object and no search
+//   hash: used
 
 exports.resolve = URL.resolve;
 exports.resolveObject = URL.resolveObject;

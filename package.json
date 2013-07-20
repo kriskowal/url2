@@ -4,7 +4,7 @@
     "description": "Node's URL module plus relative pathing",
     "author": "Kris Kowal <kris@cixar.com> (https://github.com/kriskowal/url2)",
     "homepage": "https://github.com/kriskowal/url2",
-    "keywords": ["url"],
+    "keywords": ["url", "relative", "resolve", "parse", "format"],
     "main": "url2.js",
     "repository": {
         "type": "git",
