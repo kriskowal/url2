@@ -73,7 +73,7 @@ function format(object) {
         delete object.relative;
     }
 
-    if (object.path != null) {
+    if (object.path !== null && object.path !== void 0) {
         var index = object.path.indexOf("?");
         if (index == -1) {
             object.pathname = object.path;
@@ -107,12 +107,7 @@ function relativeObject(source, target) {
         delete target.port;
         delete target.host;
 
-        if (
-            !!target.root == !!source.root && !(
-                target.root &&
-                target.directories[0] != source.directories[0]
-            )
-        ) {
+        if (Boolean(target.root) === Boolean(source.root)) {
             delete target.path;
             delete target.root;
             while (
@@ -143,7 +138,6 @@ function relativeObject(source, target) {
             ) {
                 target.search = source.search;
             }
-
         }
     }
 
