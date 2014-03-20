@@ -1,6 +1,6 @@
 {
   "name": "url2",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Node's URL module plus relative pathing",
   "author": "Kris Kowal <kris@cixar.com> (https://github.com/kriskowal/url2)",
   "homepage": "https://github.com/kriskowal/url2",
@@ -21,10 +21,10 @@
   },
   "devDependencies": {
     "jshint": "^2.1",
-    "jasminum": "^0.0.3"
+    "jasminum": "^2.0.1"
   },
   "scripts": {
-    "test": "jasminum test && npm run lint",
+    "test": "jasminum test && jasminum-phantom test && npm run lint",
     "cover": "echo TODO",
     "lint": "jshint url2.js"
   }
